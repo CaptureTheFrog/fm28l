@@ -86,6 +86,8 @@ typedef struct{
     CategoryType_t category; ///< Association category
     bool isCancelled; ///< True if this association is cancelled, i.e. the association exists but will no longer happen.
     bool isDeleted; ///< True if this association is deleted, i.e. the association no longer exists.
+    AssocService main; ///< The through, previous working or link-to service
+    AssocService assoc; ///< The starting, terminating, subsequent working or link-from service
 } Association;
 
 #define DARWIN_PPORTTIMETABLE_ELEMENT_NAME_JOURNEY              "Journey"
