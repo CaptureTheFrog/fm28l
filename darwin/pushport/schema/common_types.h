@@ -254,4 +254,13 @@ typedef struct{
     RTTITimeType ptd; ///< Public time of departure.
 } CircularTimes;
 
+/**
+ * \struct RTTIDateTimeType
+ * \brief RTTI DateTime Type (basic XML date/time)
+ */
+typedef struct {
+    RTTIDateType date;
+    RTTITimeType time;
+} RTTIDateTimeType;
+
 #endif //FM28L_COMMON_TYPES_H
