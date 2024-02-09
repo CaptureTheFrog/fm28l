@@ -263,4 +263,15 @@ typedef struct {
     RTTITimeType time;
 } RTTIDateTimeType;
 
+#define DARWIN_TIMETABLEFILENAMETYPE_MIN_STRING_LENGTH   1
+#define DARWIN_TIMETABLEFILENAMETYPE_MAX_STRING_LENGTH   128
+#define DARWIN_TIMETABLEFILENAMETYPE_MAX_BYTES_LENGTH   (DARWIN_TIMETABLEFILENAMETYPE_MAX_STRING_LENGTH + 1)
+/**
+ * \struct TimetableFilenameType
+ * \brief The name of a timetable file that can be downloaded via FTP.
+ */
+typedef struct {
+    char string[DARWIN_TIMETABLEFILENAMETYPE_MAX_BYTES_LENGTH];
+} TimetableFilenameType;
+
 #endif //FM28L_COMMON_TYPES_H
