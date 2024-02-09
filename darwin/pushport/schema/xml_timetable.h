@@ -68,6 +68,16 @@ typedef enum{
 typedef uint16_t CategoryType_t;
 
 /**
+ * \struct AssocService
+ */
+typedef struct {
+    RIDType rid; ///< RTTI Train ID. Note that since this is an RID, the service must already exist within Darwin.
+    CircularTimes times;
+} AssocService;
+
+#define DARWIN_ASSOCIATION_ISCANCELLED_DEFAULT                  FALSE
+#define DARWIN_ASSOCIATION_ISDELETED_DEFAULT                    FALSE
+/**
  * \struct Association
  * \brief An association between two schedules
  */

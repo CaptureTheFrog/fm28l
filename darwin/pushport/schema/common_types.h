@@ -238,4 +238,20 @@ typedef struct {
 
 typedef int16_t DelayValueType; ///< A signed delay value as a number of minutes
 
+/**
+ * \struct CircularTimes
+ * \brief A scheduled time used to distinguish a location on circular routes.
+ *
+ * Note that all scheduled time attributes are marked as optional, but at least one must always be supplied.
+ * Only one value is required, and typically this should be the wtd value. However, for locations that have no wtd,
+ * or for clients that deal exclusively with public times, another value that is valid for the location may be supplied.
+ */
+typedef struct{
+    WTimeType wta; ///< Working time of arrival.
+    WTimeType wtd; ///< Working time of departure.
+    WTimeType wtp; ///< Working time of pass.
+    RTTITimeType pta; ///< Public time of arrival.
+    RTTITimeType ptd; ///< Public time of departure.
+} CircularTimes;
+
 #endif //FM28L_COMMON_TYPES_H
