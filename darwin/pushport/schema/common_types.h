@@ -274,4 +274,16 @@ typedef struct {
     char string[DARWIN_TIMETABLEFILENAMETYPE_MAX_BYTES_LENGTH];
 } TimetableFilenameType;
 
+
+
+#define DARWIN_SNAPSHOTIDTYPE_MAX_STRING_LENGTH   40
+#define DARWIN_SNAPSHOTIDTYPE_MAX_BYTES_LENGTH   (DARWIN_SNAPSHOTIDTYPE_MAX_STRING_LENGTH + 1)
+/**
+ * \struct SnapshotIDType
+ * \brief Defines the ID for a snapshot file to be recovered via FTP
+ */
+typedef struct {
+    char string[DARWIN_SNAPSHOTIDTYPE_MAX_BYTES_LENGTH];
+} SnapshotIDType;
+
 #endif //FM28L_COMMON_TYPES_H
