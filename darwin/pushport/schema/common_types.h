@@ -286,4 +286,15 @@ typedef struct {
     char string[DARWIN_SNAPSHOTIDTYPE_MAX_BYTES_LENGTH];
 } SnapshotIDType;
 
+#define DARWIN_DCISREQUESTID_MIN_STRING_LENGTH   1
+#define DARWIN_DCISREQUESTID_MAX_STRING_LENGTH   16
+#define DARWIN_DCISREQUESTID_MAX_BYTES_LENGTH   (DARWIN_DCISREQUESTID_MAX_STRING_LENGTH + 1)
+/**
+ * \struct DCISRequestID
+ * \brief A DCIS client request identifier
+ */
+typedef struct {
+    char string[DARWIN_DCISREQUESTID_MAX_BYTES_LENGTH];
+} DCISRequestID;
+
 #endif //FM28L_COMMON_TYPES_H
