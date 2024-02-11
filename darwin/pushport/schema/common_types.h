@@ -297,4 +297,14 @@ typedef struct {
     char string[DARWIN_DCISREQUESTID_MAX_BYTES_LENGTH];
 } DCISRequestID;
 
+#define DARWIN_SOURCETYPEINST_STRING_LENGTH   4
+#define DARWIN_SOURCETYPEINST_BYTES_LENGTH   (DARWIN_SOURCETYPEINST_STRING_LENGTH + 1)
+/**
+ * \struct SourceTypeInst
+ * \brief A RTTI CIS code, provided if forecast or actual source type is CIS
+ */
+typedef struct {
+    char string[DARWIN_SOURCETYPEINST_BYTES_LENGTH];
+} SourceTypeInst;
+
 #endif //FM28L_COMMON_TYPES_H
