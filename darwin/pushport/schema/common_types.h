@@ -307,4 +307,16 @@ typedef struct {
     char string[DARWIN_SOURCETYPEINST_BYTES_LENGTH];
 } SourceTypeInst;
 
+/**
+ * \enum ToiletStatus
+ * \brief The service status of a toilet in coach formation data.
+ */
+typedef enum{
+    TOILET_STATUS_UNKNOWN = 0,
+    TOILET_STATUS_IN_SERVICE = 1,
+    TOILET_STATUS_NOT_IN_SERVICE = 2
+} ToiletStatus;
+
+static const char* darwin_toilet_status_strings[] = {"Unknown", "InService","NotInService"};
+
 #endif //FM28L_COMMON_TYPES_H
