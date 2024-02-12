@@ -333,4 +333,13 @@ typedef struct {
     uint32_t len; ///< Length of string including null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
 } ToiletType;
 
+/**
+ * \struct ToiletAvailabilityType
+ * \brief The availability of a toilet in coach formation data. If no availability is supplied, it should be assumed to have the value "Unknown".
+ */
+typedef struct {
+    ToiletType type;
+    ToiletStatus status; ///< The service status of this toilet. E.g. "Unknown", "InService" or "NotInService".
+} ToiletAvailabilityType;
+
 #endif //FM28L_COMMON_TYPES_H
