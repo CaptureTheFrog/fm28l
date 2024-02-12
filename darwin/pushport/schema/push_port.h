@@ -6,6 +6,7 @@
 #define FM28L_PUSH_PORT_H
 
 #include "common_types.h"
+#include "push_port_status.h"
 
 typedef enum{
     QueryTimetableMessage, ///< Query for the current timetable ID
@@ -66,5 +67,15 @@ typedef struct{
 typedef struct{
     SnapshotIDType snapshotId; ///< Defines an ID for recovering snapshot data via FTP
 } SnapshotId;
+
+/**
+ * \struct FailureResp
+ * \brief Defines an ID for recovering snapshot data via FTP
+ */
+typedef struct{
+    StatusType status;
+    SourceTypeInst requestSource; ///< The DCIS source that generated this update
+    DCISRequestID requestID; ///< The DCISRequestID value provided by the originator of this update. Used in conjunction with the updateSource attribute to ensure uniqueness
+} FailureResp;
 
 #endif //FM28L_PUSH_PORT_H
