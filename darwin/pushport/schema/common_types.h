@@ -319,4 +319,18 @@ typedef enum{
 
 static const char* darwin_toilet_status_strings[] = {"Unknown", "InService","NotInService"};
 
+#define DARWIN_TOILET_TYPE_UNKNOWN      "Unknown"
+#define DARWIN_TOILET_TYPE_NONE         "None"
+#define DARWIN_TOILET_TYPE_STANDARD     "Standard"
+#define DARWIN_TOILET_TYPE_ACCESSIBLE   "Accessible"
+
+/**
+ * \struct ToiletType
+ * \brief An indication of the availability of a toilet in a coach in a train formation. E.g. "Unknown", "None" , "Standard" or "Accessible". Note that other values may be supplied in the future without a schema change.
+ */
+typedef struct {
+    char** string; ///< Pointer to string. Must be freed after use.
+    uint32_t len; ///< Length of string including null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+} ToiletType;
+
 #endif //FM28L_COMMON_TYPES_H
