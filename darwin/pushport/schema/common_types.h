@@ -316,7 +316,7 @@ typedef enum{
     TOILET_STATUS_IN_SERVICE = 1,
     TOILET_STATUS_NOT_IN_SERVICE = 2
 } ToiletStatus;
-
+#define DARWIN_TOILET_STATUS_DEFAULT    TOILET_STATUS_IN_SERVICE
 static const char* darwin_toilet_status_strings[] = {"Unknown", "InService","NotInService"};
 
 #define DARWIN_TOILET_TYPE_UNKNOWN      "Unknown"
