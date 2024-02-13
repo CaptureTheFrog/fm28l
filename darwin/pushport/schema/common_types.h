@@ -380,4 +380,8 @@ typedef struct {
 // schema says unsigned short, but if our max is 99 then uchar is fine
 typedef uint8_t TrainLengthType; ///< Defines the length of a train
 
+#define DARWIN_LOADINGVALUE_MAX_INCLUSIVE        100
+// schema says unsigned int, but if our max is 100 then uchar is fine
+typedef uint8_t LoadingValue; ///< A value representing the loading of a train coach as a percentage (0-100%).
+
 #endif //FM28L_COMMON_TYPES_H
