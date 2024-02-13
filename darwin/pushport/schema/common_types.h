@@ -353,4 +353,16 @@ typedef struct {
     char string[DARWIN_COACHNUMBERTYPE_MAX_BYTES_LENGTH];
 } CoachNumberType;
 
+#define DARWIN_COACHCLASSTYPE_FIRST     "First"
+#define DARWIN_COACHCLASSTYPE_STANDARD  "Standard"
+#define DARWIN_COACHCLASSTYPE_MIXED     "Mixed"
+/**
+ * \struct CoachClassType
+ * \brief An indication of the class of a coach in a train formation. E.g. "First", "Standard" or "Mixed".
+ */
+typedef struct {
+    char** string; ///< Pointer to string. Must be freed after use.
+    uint32_t len; ///< Length of string including null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+} CoachClassType;
+
 #endif //FM28L_COMMON_TYPES_H
