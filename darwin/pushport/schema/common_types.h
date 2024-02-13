@@ -342,4 +342,15 @@ typedef struct {
     ToiletStatus status; ///< The service status of this toilet. E.g. "Unknown", "InService" or "NotInService".
 } ToiletAvailabilityType;
 
+#define DARWIN_COACHNUMBERTYPE_MIN_STRING_LENGTH   1
+#define DARWIN_COACHNUMBERTYPE_MAX_STRING_LENGTH   2
+#define DARWIN_COACHNUMBERTYPE_MAX_BYTES_LENGTH   (DARWIN_COACHNUMBERTYPE_MAX_STRING_LENGTH + 1)
+/**
+ * \struct CoachNumberType
+ * \brief A Coach number/identifier in a train formation. E.g. "A" or "12".
+ */
+typedef struct {
+    char string[DARWIN_COACHNUMBERTYPE_MAX_BYTES_LENGTH];
+} CoachNumberType;
+
 #endif //FM28L_COMMON_TYPES_H
