@@ -13,7 +13,7 @@
  */
 typedef struct{
     char** string; ///< Pointer to string for the alarm ID. Must be freed after use.
-    uint32_t len; ///< Length of string for the alarm ID null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    uint32_t len; ///< Length of string for the alarm ID icnluding null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
 } AlarmID;
 
 /**
