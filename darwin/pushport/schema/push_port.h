@@ -7,6 +7,15 @@
 
 #include "common_types.h"
 #include "push_port_status.h"
+#include "xml_timetable.h"
+#include "push_port_schedules.h"
+#include "push_port_formations.h"
+#include "push_port_forecasts.h"
+#include "push_port_station_messages.h"
+#include "push_port_train_alerts.h"
+#include "push_port_train_order.h"
+#include "push_port_td_data.h"
+#include "push_port_alarms.h"
 
 typedef enum{
     QueryTimetableMessage, ///< Query for the current timetable ID
@@ -77,5 +86,34 @@ typedef struct{
     SourceTypeInst requestSource; ///< The DCIS source that generated this update
     DCISRequestID requestID; ///< The DCISRequestID value provided by the originator of this update. Used in conjunction with the updateSource attribute to ensure uniqueness
 } FailureResp;
+
+/**
+ * \struct DataResponse
+ * \brief Update Response
+ */
+typedef struct{
+    Schedule* schedules; ///< Array of schedules in this response. Must be freed after use.
+    uint32_t scheduleCount; ///< Number of schedules in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    DeactivatedSchedule* deactivateds; ///< Array of deactivated schedules in this response. Must be freed after use.
+    uint32_t deactivatedCount; ///< Number of deactivated schedules in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    Association* associations; ///< Array of associations in this response. Must be freed after use.
+    uint32_t associationCount; ///< Number of associations in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    ScheduleFormations* scheduleFormations; ///< Array of schedule formations in this response. Must be freed after use.
+    uint32_t scheduleFormationCount; ///< Number of schedule formations in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    TS* tses; ///< Array of TSes in this response. Must be freed after use.
+    uint32_t tsCount; ///< Number of TSes in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    Loading* formationLoadings; ///< Array of formation loadings in this response. Must be freed after use.
+    uint32_t formationLoadingCount; ///< Number of formation loadings in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    StationMessage* ows; ///< Array of darwin workstation messages in this response. Must be freed after use.
+    uint32_t owCount; ///< Number of darwin workstation messages in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    TrainAlert* trainAlerts; ///< Array of train alerts in this response. Must be freed after use.
+    uint32_t trainAlertCount; ///< Number of train alerts in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    TrainOrder* trainOrders; ///< Array of train orders in this response. Must be freed after use.
+    uint32_t trainOrderCount; ///< Number of train orders in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    TrackingID* trackingIDs; ///< Array of tracking IDs in this response. Must be freed after use.
+    uint32_t trackingIDCount; ///< Number of tracking IDs in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    RTTIAlarm* alarms; ///< Array of alarms in this response. Must be freed after use.
+    uint32_t alarmCount; ///< Number of alarms in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+} DataResponse;
 
 #endif //FM28L_PUSH_PORT_H
