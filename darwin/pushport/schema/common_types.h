@@ -384,4 +384,10 @@ typedef uint8_t TrainLengthType; ///< Defines the length of a train
 // schema says unsigned int, but if our max is 100 then uchar is fine
 typedef uint8_t LoadingValue; ///< A value representing the loading of a train coach as a percentage (0-100%).
 
+#define DARWIN_CRSTYPE_STRING_LENGTH   3
+#define DARWIN_CRSTYPE_BYTES_LENGTH   (DARWIN_CRSTYPE_STRING_LENGTH + 1)
+typedef struct {
+    char string[DARWIN_CRSTYPE_BYTES_LENGTH];
+} CRSType;
+
 #endif //FM28L_COMMON_TYPES_H
