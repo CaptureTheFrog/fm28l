@@ -390,4 +390,14 @@ typedef struct {
     char string[DARWIN_CRSTYPE_BYTES_LENGTH];
 } CRSType;
 
+#define DARWIN_TDAREAIDTYPE_STRING_LENGTH   2
+#define DARWIN_TDAREAIDTYPE_BYTES_LENGTH   (DARWIN_TDAREAIDTYPE_STRING_LENGTH + 1)
+/**
+ * \struct TDAreaIDType
+ * \brief A TD area identifier.
+ */
+typedef struct {
+    char string[DARWIN_TDAREAIDTYPE_BYTES_LENGTH];
+} TDAreaIDType;
+
 #endif //FM28L_COMMON_TYPES_H
