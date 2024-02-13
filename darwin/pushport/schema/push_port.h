@@ -116,4 +116,16 @@ typedef struct{
     uint32_t alarmCount; ///< Number of alarms in this response. Theoretically infinite but limited to 32-bit unsigned int in this implementation
 } DataResponse;
 
+/**
+ * \struct uR
+ * \brief Update Response
+ */
+typedef struct{
+    DataResponse dataResponse;
+    char** updateOriginString; ///< Pointer to string for a string describing the type of system that originated this update, e.g. "CIS" or "Darwin". Must be freed after use.
+    uint32_t updateOriginLen; ///< Length of string for the update origin including null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+    SourceTypeInst requestSource; ///< The source instance that generated this update, usually a CIS instance.
+    DCISRequestID requestID; ///< The DCISRequestID value provided by the originator of this update. Used in conjunction with the requestSource attribute to ensure uniqueness
+} uR;
+
 #endif //FM28L_PUSH_PORT_H
