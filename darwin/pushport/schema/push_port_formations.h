@@ -17,4 +17,13 @@ typedef struct{
     ToiletAvailabilityType toiletAvailability;
 } CoachData;
 
+/**
+ * \struct CoachList
+ * \brief A list of coach data for a formation.
+ */
+typedef struct{
+    CoachData* coaches; ///< Array of coaches. Must be freed after use.
+    uint32_t coachCount; ///< Number of coaches. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+} CoachList;
+
 #endif //FM28L_PUSH_PORT_FORMATIONS_H
