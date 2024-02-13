@@ -38,4 +38,14 @@ typedef struct{
     SourceTypeInst srcInst; ///< The RTTI instance ID of the src (if any).
 } Formation;
 
+/**
+ * \struct ScheduleFormations
+ * \brief Type describing all of the Train Formations set for a Schedule.
+ */
+typedef struct{
+    RIDType rid; ///< RTTI unique Train Identifier
+    Formation* formations; ///< Array of formations. Must be freed after use.
+    uint32_t formationCount; ///< Number of formations. Theoretically infinite but limited to 32-bit unsigned int in this implementation
+} ScheduleFormations;
+
 #endif //FM28L_PUSH_PORT_FORMATIONS_H
