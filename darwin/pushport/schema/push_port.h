@@ -17,6 +17,10 @@
 #include "push_port_td_data.h"
 #include "push_port_alarms.h"
 
+/*
+ * Note: SuffixType is not implemented here as it does not appear to be used in v16 of the schema
+ */
+
 typedef enum{
     QueryTimetableMessage, ///< Query for the current timetable ID
     TimeTableIdMessage, ///< Response for the current timetable ID
