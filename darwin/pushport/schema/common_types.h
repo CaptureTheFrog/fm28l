@@ -365,4 +365,15 @@ typedef struct {
     uint32_t len; ///< Length of string including null terminator. Theoretically infinite but limited to 32-bit unsigned int in this implementation
 } CoachClassType;
 
+#define DARWIN_FORMATIONIDTYPE_MIN_STRING_LENGTH   1
+#define DARWIN_FORMATIONIDTYPE_MAX_STRING_LENGTH   20
+#define DARWIN_FORMATIONIDTYPE_MAX_BYTES_LENGTH   (DARWIN_FORMATIONIDTYPE_MAX_STRING_LENGTH + 1)
+/**
+ * \struct FormationIDType
+ * \brief A unique identifier for a train formation.
+ */
+typedef struct {
+    char string[DARWIN_FORMATIONIDTYPE_MAX_BYTES_LENGTH];
+} FormationIDType;
+
 #endif //FM28L_COMMON_TYPES_H
