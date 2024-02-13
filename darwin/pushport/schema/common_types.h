@@ -400,4 +400,14 @@ typedef struct {
     char string[DARWIN_TDAREAIDTYPE_BYTES_LENGTH];
 } TDAreaIDType;
 
+#define DARWIN_TDBERTHIDTYPE_STRING_LENGTH   4
+#define DARWIN_TDBERTHIDTYPE_BYTES_LENGTH   (DARWIN_TDBERTHIDTYPE_STRING_LENGTH + 1)
+/**
+ * \struct TDBerthIDType
+ * \brief A TD berth identifier.
+ */
+typedef struct {
+    char string[DARWIN_TDBERTHIDTYPE_BYTES_LENGTH];
+} TDBerthIDType;
+
 #endif //FM28L_COMMON_TYPES_H
