@@ -128,4 +128,12 @@ typedef struct{
     DCISRequestID requestID; ///< The DCISRequestID value provided by the originator of this update. Used in conjunction with the requestSource attribute to ensure uniqueness
 } uR;
 
+/**
+ * \struct sR
+ * \brief Snapshot Response
+ */
+typedef struct{
+    DataResponse dataResponse;
+} sR;
+
 #endif //FM28L_PUSH_PORT_H
