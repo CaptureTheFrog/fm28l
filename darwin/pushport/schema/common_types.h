@@ -376,4 +376,8 @@ typedef struct {
     char string[DARWIN_FORMATIONIDTYPE_MAX_BYTES_LENGTH];
 } FormationIDType;
 
+#define DARWIN_TRAINLENGTHTYPE_MAX_INCLUSIVE        99
+// schema says unsigned short, but if our max is 99 then uchar is fine
+typedef uint8_t TrainLengthType; ///< Defines the length of a train
+
 #endif //FM28L_COMMON_TYPES_H
