@@ -70,3 +70,23 @@ int awsS3_utils_trim(char* string, size_t n, size_t* new_n){
 
     return 0;
 }
+
+#define AWSS3_UTILS_URIENCODE_IS_UNRESERVED(x) (((x) >= 'A' && (x) <= 'Z') || ((x) >= 'a' && (x) <= 'z') || ((x) >= '0' && (x) <= '9') || ((x) == '-') || ((x) == '.') || ((x) == '_') || ((x) == '~'))
+char* awsS3_utils_uriencode(char* string, size_t n, bool path){
+    char* output = malloc((n*3)+1);
+    if(output != NULL){
+        memset(output, 0, (n*3)+1);
+        char* next = output;
+        char* output_buffer_final = output + (n*3)+1;
+        for(size_t i = 0; i < n; i++){
+            if(AWSS3_UTILS_URIENCODE_IS_UNRESERVED(string[i]) || (path && string[i] == '/')){
+                *next = string[i];
+                next++;
+            }else{
+                next += snprintf(next, (output_buffer_final - next - 1), "%%%02X", string[i]);
+            }
+        }
+        realloc(output, (next - output) + 1);
+    }
+    return output;
+}
