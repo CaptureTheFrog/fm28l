@@ -8,5 +8,6 @@
 #include <stddef.h>
 
 void awsS3_utils_lowercase(char* string, size_t n);
+char* awsS3_utils_hex(char* string, size_t n);
 
 #endif //FM28L_STRING_OPERATIONS_H
