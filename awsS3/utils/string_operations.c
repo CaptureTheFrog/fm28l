@@ -4,6 +4,7 @@
 #include "string_operations.h"
 #include <malloc.h>
 #include <openssl/sha.h>
+#include <openssl/hmac.h>
 
 void awsS3_utils_lowercase(char* string, size_t n){
     for(size_t i = 0; i < n - 1; i++)
@@ -26,3 +27,9 @@ char* awsS3_utils_sha256hash(const unsigned char* input, size_t count){
     SHA256(input, count, hash);
     return awsS3_utils_hex(hash, SHA256_DIGEST_LENGTH);
 }
+
+char* awsS3_utils_hmac_sha256(const unsigned char* input, size_t input_count, const unsigned char* key, size_t key_count){
+    unsigned char hmac[SHA256_DIGEST_LENGTH];
+    HMAC(EVP_sha256(), key, key_count, input, input_count, hmac, NULL);
+    return awsS3_utils_hex(hmac, SHA256_DIGEST_LENGTH);
+};
