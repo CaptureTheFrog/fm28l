@@ -12,8 +12,10 @@ void awsS3_utils_lowercase(char* string, size_t n){
 
 char* awsS3_utils_hex(char* input, size_t n){
     char* output = malloc(((n-1)*2)+1);
-    if(output != NULL)
-        for(size_t i = 0; i < n - 1; i++)
-            snprintf(output + (i*2), 2, "%02x", input[i]);
+    if(output != NULL) {
+        for (size_t i = 0; i < n - 1; i++)
+            snprintf(output + (i * 2), 3, "%02x", input[i]);
+        output[((n-1)*2)+1] = '\0';
+    }
     return output;
 };
