@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<cambalache-project version="0.13.1" target_tk="gtk-4.0">
+  <ui>
+	(1,None,"font_editor.ui","font_editor.ui",None,None,None,None,None,None,None)
+  </ui>
+  <ui_library>
+	(1,"gtk","4.6",None),
+	(1,"libadwaita","1.1",None)
+  </ui_library>
+  <object>
+	(1,1,"GtkApplicationWindow","window",None,None,None,None,-1,None),
+	(1,36,"GtkPaned",None,1,None,None,None,-1,None),
+	(1,37,"GtkListBox",None,36,None,None,None,None,None),
+	(1,38,"GtkButton","btnCrop",37,None,None,None,None,None),
+	(1,39,"GtkDrawingArea","drawingArea",36,None,None,None,1,None),
+	(1,40,"AdwHeaderBar","headerBar",1,None,"titlebar",None,1,None),
+	(1,41,"AdwWindowTitle","titleWidget",40,None,None,None,None,None),
+	(1,42,"AdwSplitButton","btnOpen",40,None,None,None,None,None),
+	(1,43,"GtkButton","btnSave",40,None,"end",None,1,None),
+	(1,44,"GtkComboBoxText","cmbGlyph",40,None,"end",None,2,None),
+	(1,45,"GtkFileChooserDialog",None,None,None,None,None,-1,None),
+	(1,46,"GtkGrid",None,37,None,None,None,-1,None),
+	(1,47,"GtkSpinButton","numWidth",46,None,None,None,-1,None),
+	(1,48,"GtkSpinButton","numHeight",46,None,None,None,-1,None),
+	(1,49,"GtkLabel",None,46,None,None,None,-1,None),
+	(1,50,"GtkLabel",None,46,None,None,None,-1,None),
+	(1,51,"GtkAdjustment",None,47,None,None,None,-1,None),
+	(1,52,"GtkAdjustment",None,48,None,None,None,-1,None),
+	(1,53,"GtkLabel",None,46,None,None,None,4,None),
+	(1,54,"GtkSpinButton","numDescend",46,None,None,None,5,None),
+	(1,55,"GtkAdjustment",None,54,None,None,None,None,None)
+  </object>
+  <object_property>
+	(1,1,"GtkApplicationWindow","default-height","800",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkApplicationWindow","default-width","1000",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkApplicationWindow","maximized","True",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkApplicationWindow","title","Font Editor",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkApplicationWindow","titlebar","5",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkWindow","maximized","True",None,None,None,None,None,None,None,None,None),
+	(1,38,"GtkButton","label","Crop",None,None,None,None,None,None,None,None,None),
+	(1,40,"AdwHeaderBar","title-widget",None,None,None,None,None,41,None,None,None,None),
+	(1,41,"AdwWindowTitle","subtitle","no file loaded",None,None,None,None,None,None,None,None,None),
+	(1,41,"AdwWindowTitle","title","Font Editor",None,None,None,None,None,None,None,None,None),
+	(1,42,"AdwSplitButton","label","Open",None,None,None,None,None,None,None,None,None),
+	(1,43,"GtkButton","label","Save",None,None,None,None,None,None,None,None,None),
+	(1,43,"GtkWidget","sensitive","False",None,None,None,None,None,None,None,None,None),
+	(1,44,"GtkComboBox","active","0",None,None,None,None,None,None,None,None,None),
+	(1,46,"GtkGrid","column-homogeneous","True",None,None,None,None,None,None,None,None,None),
+	(1,47,"GtkSpinButton","adjustment",None,None,None,None,None,51,None,None,None,None),
+	(1,47,"GtkSpinButton","climb-rate","1.0",None,None,None,None,None,None,None,None,None),
+	(1,47,"GtkSpinButton","numeric","True",None,None,None,None,None,None,None,None,None),
+	(1,47,"GtkSpinButton","snap-to-ticks","True",None,None,None,None,None,None,None,None,None),
+	(1,48,"GtkSpinButton","adjustment",None,None,None,None,None,52,None,None,None,None),
+	(1,48,"GtkSpinButton","climb-rate","1.0",None,None,None,None,None,None,None,None,None),
+	(1,48,"GtkSpinButton","numeric","True",None,None,None,None,None,None,None,None,None),
+	(1,48,"GtkSpinButton","snap-to-ticks","True",None,None,None,None,None,None,None,None,None),
+	(1,49,"GtkLabel","label","Width",None,None,None,None,None,None,None,None,None),
+	(1,50,"GtkLabel","label","Height",None,None,None,None,None,None,None,None,None),
+	(1,51,"GtkAdjustment","step-increment","1.0",None,None,None,None,None,None,None,None,None),
+	(1,51,"GtkAdjustment","upper","256.0",None,None,None,None,None,None,None,None,None),
+	(1,52,"GtkAdjustment","step-increment","1.0",None,None,None,None,None,None,None,None,None),
+	(1,52,"GtkAdjustment","upper","32.0",None,None,None,None,None,None,None,None,None),
+	(1,53,"GtkLabel","label","Descender Offset",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkSpinButton","adjustment",None,None,None,None,None,55,None,None,None,None),
+	(1,54,"GtkSpinButton","climb-rate","1.0",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkSpinButton","numeric","True",None,None,None,None,None,None,None,None,None),
+	(1,54,"GtkSpinButton","snap-to-ticks","True",None,None,None,None,None,None,None,None,None),
+	(1,55,"GtkAdjustment","step-increment","1.0",None,None,None,None,None,None,None,None,None),
+	(1,55,"GtkAdjustment","upper","32.0",None,None,None,None,None,None,None,None,None)
+  </object_property>
+  <object_layout_property>
+	(1,46,47,"GtkGridLayoutChild","column","1",None,None,None,None),
+	(1,46,47,"GtkGridLayoutChild","column-span","2",None,None,None,None),
+	(1,46,48,"GtkGridLayoutChild","column","1",None,None,None,None),
+	(1,46,48,"GtkGridLayoutChild","column-span","2",None,None,None,None),
+	(1,46,48,"GtkGridLayoutChild","row","1",None,None,None,None),
+	(1,46,50,"GtkGridLayoutChild","row","1",None,None,None,None),
+	(1,46,53,"GtkGridLayoutChild","row","2",None,None,None,None),
+	(1,46,54,"GtkGridLayoutChild","column","1",None,None,None,None),
+	(1,46,54,"GtkGridLayoutChild","column-span","2",None,None,None,None),
+	(1,46,54,"GtkGridLayoutChild","row","2",None,None,None,None)
+  </object_layout_property>
+  <object_data>
+	(1,44,"GtkComboBoxText",1,1,None,None,None,None,None,None),
+	(1,38,"GtkWidget",1,1,None,None,None,None,None,None)
+  </object_data>
+</cambalache-project>

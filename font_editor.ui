@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.16.0 -->
+<interface>
+  <!-- interface-name font_editor.ui -->
+  <requires lib="gtk" version="4.6"/>
+  <requires lib="libadwaita" version="1.1"/>
+  <object class="GtkApplicationWindow" id="window">
+    <property name="maximized">True</property>
+    <child>
+      <object class="GtkPaned">
+        <child>
+          <object class="GtkListBox">
+            <child>
+              <object class="GtkGrid">
+                <property name="column-homogeneous">True</property>
+                <child>
+                  <object class="GtkSpinButton" id="numWidth">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="step-increment">1.0</property>
+                        <property name="upper">256.0</property>
+                      </object>
+                    </property>
+                    <property name="climb-rate">1.0</property>
+                    <property name="numeric">True</property>
+                    <property name="snap-to-ticks">True</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="column-span">2</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="numHeight">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="step-increment">1.0</property>
+                        <property name="upper">32.0</property>
+                      </object>
+                    </property>
+                    <property name="climb-rate">1.0</property>
+                    <property name="numeric">True</property>
+                    <property name="snap-to-ticks">True</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="column-span">2</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Width</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Height</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Descender Offset</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="numDescend">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="step-increment">1.0</property>
+                        <property name="upper">32.0</property>
+                      </object>
+                    </property>
+                    <property name="climb-rate">1.0</property>
+                    <property name="numeric">True</property>
+                    <property name="snap-to-ticks">True</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="column-span">2</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnCrop">
+                <property name="label">Crop</property>
+                <style/>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDrawingArea" id="drawingArea"/>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="AdwHeaderBar" id="headerBar">
+        <property name="title-widget">
+          <object class="AdwWindowTitle" id="titleWidget">
+            <property name="subtitle">no file loaded</property>
+            <property name="title">Font Editor</property>
+          </object>
+        </property>
+        <child>
+          <object class="AdwSplitButton" id="btnOpen">
+            <property name="label">Open</property>
+          </object>
+        </child>
+        <child type="end">
+          <object class="GtkButton" id="btnSave">
+            <property name="label">Save</property>
+            <property name="sensitive">False</property>
+          </object>
+        </child>
+        <child type="end">
+          <object class="GtkComboBoxText" id="cmbGlyph">
+            <property name="active">0</property>
+            <items/>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkFileChooserDialog"/>
+</interface>
