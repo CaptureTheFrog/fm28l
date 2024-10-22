@@ -1,0 +1,55 @@
+/*  GIMP header image file format (RGB): /home/eddie/Projects/fm28l/led_image.h  */
+#ifdef USE_RPI_PIXELS
+#define led_image_width 2
+#define led_image_height 2
+static unsigned int led_image[] = {0xff9800,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   };
+#else
+#define led_image_width 6
+#define led_image_height 7
+static unsigned int led_image[] = {0xff6600,
+                                   0xff8000,
+                                   0xff9001,
+                                   0xfe7f00,
+                                   0xff6600,
+                                   0x2a1200,
+                                   0xff7701,
+                                   0xff9801,
+                                   0xfeb101,
+                                   0xff9901,
+                                   0xfe7600,
+                                   0x2a1300,
+                                   0xff7700,
+                                   0xff9801,
+                                   0xfeb202,
+                                   0xfe9901,
+                                   0xff7701,
+                                   0x2a1300,
+                                   0xff6600,
+                                   0xfe7f01,
+                                   0xff8701,
+                                   0xff7f00,
+                                   0xff6600,
+                                   0x2a1200,
+                                   0x2a1200,
+                                   0x2a1400,
+                                   0x2a1500,
+                                   0x2a1400,
+                                   0x2a1200,
+                                   0x2a1000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000,
+                                   0x000000};
+#endif
