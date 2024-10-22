@@ -1,0 +1,1 @@
+This directory contains the beginnings of currently unused code for AWS S3 interfacing, which would be used to grab Darwin snapshots from the API.
